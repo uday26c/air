@@ -278,75 +278,7 @@
             }
         }
 
-        .faq-container {
-            max-width: 800px;
-            margin: 50px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .faq-item {
-            margin-bottom: 10px;
-        }
-
-        .question-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #555;
-            color: #fff;
-            padding: 15px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .question {
-            margin: 0;
-        }
-
-        .plus-sign {
-            font-size: 1.5em;
-        }
-
-        .answer {
-            display: none;
-            background: #f9f9f9;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-
-        .ask-question {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .ask-question input[type="text"] {
-            width: 80%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .ask-question input[type="submit"] {
-            padding: 10px 20px;
-            margin-top: 10px;
-            background-color: rgb(108, 209, 108);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    
     </style>
 </head>
 <body>
@@ -379,36 +311,7 @@
             <p>Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum.</p>
             <!-- More content can be added here -->
         </div>
-        <div class="faq-container">
-            <h1 class="fq">Frequently Asked Questions</h1>
-            <div class="faq-item">
-                <div class="question-container">
-                    <div class="question">What is your return policy?</div>
-                    <div class="plus-sign">+</div>
-                </div>
-                <div class="answer">Our return policy lasts 30 days...</div>
-            </div>
-            <div class="faq-item">
-                <div class="question-container">
-                    <div class="question">How do I track my order?</div>
-                    <div class="plus-sign">+</div>
-                </div>
-                <div class="answer">You can track your order through...</div>
-            </div>
-            <div class="faq-item">
-                <div class="question-container">
-                    <div class="question">Do you ship internationally?</div>
-                    <div class="plus-sign">+</div>
-                </div>
-                <div class="answer">Yes, we ship to over 50 countries...</div>
-            </div>
-            
-            <div class="ask-question">
-                <h2>Have a Question?</h2>
-                <input type="text" id="user-question" placeholder="Type your question here...">
-                <input type="submit" id="submit-question" value="Submit">
-            </div>
-        </div>
+       
         <div class="related-articles">
             <h3>Related Articles</h3>
             <div class="article">
@@ -451,28 +354,5 @@
         dropdown.classList.toggle('show');
     }
 </script>
-<script>
-    document.querySelectorAll('.question-container').forEach(item => {
-        item.addEventListener('click', event => {
-            const answer = item.nextElementSibling;
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-                item.querySelector('.plus-sign').textContent = '+';
-            } else {
-                answer.style.display = 'block';
-                item.querySelector('.plus-sign').textContent = '-';
-            }
-        })
-    });
 
-    document.getElementById('submit-question').addEventListener('click', () => {
-        const userQuestion = document.getElementById('user-question').value;
-        if (userQuestion.trim()) {
-            alert(`Your question: "${userQuestion}" has been submitted!`);
-            document.getElementById('user-question').value = '';
-        } else {
-            alert('Please enter a question.');
-        }
-    });
-</script>
 </html>
